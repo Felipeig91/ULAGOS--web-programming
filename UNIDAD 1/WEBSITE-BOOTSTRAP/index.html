@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
     ======================================
     Sitio Web - Bootstrap 5
@@ -14,98 +14,115 @@
     - Footer
 -->
 <html lang="es">
-<head>
+  <head>
     <!-- META TAGS: Información del sitio -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sitio web Bootstrap">
-    <meta name="author" content="Tu nombre">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sitio web Bootstrap" />
+    <meta name="author" content="Tu nombre" />
+
     <title>Mi Sitio con Bootstrap</title>
-    
+
     <!-- Bootstrap CSS: Framework responsive -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Estilos personalizados: Variables CSS y animaciones -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- ========== NAVEGADOR ========== -->
     <!-- Barra de navegación responsiva con Bootstrap -->
     <!-- Incluye logo y enlaces a secciones principales -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#home">Mi Sitio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home">Mi Sitio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ========== HERO SECTION ========== -->
     <!-- Sección principal con imagen y CTA -->
     <!-- Contiene texto introductorio y botón de acción -->
     <section id="home" class="hero-section bg-light py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold">Bienvenido</h1>
-                    <p class="lead">Este es un sitio web creado con Bootstrap 5.</p>
-                    <a href="#servicios" class="btn btn-primary btn-lg">Conoce más</a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://www.lucushost.com/blog/wp-content/uploads/2019/10/bootstrap.png" alt="Imagen principal" class="img-fluid rounded">
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">Bienvenido</h1>
+            <p class="lead">Este es un sitio web creado con Bootstrap 5.</p>
+            <a href="#servicios" class="btn btn-primary btn-lg">Conoce más</a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://www.lucushost.com/blog/wp-content/uploads/2019/10/bootstrap.png"
+              alt="Imagen principal"
+              class="img-fluid rounded"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ========== SERVICIOS SECTION ========== -->
     <!-- Muestra 3 servicios principales en tarjetas -->
     <!-- Personalizar con tus servicios reales -->
     <section id="servicios" class="servicios-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Nuestros Servicios</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Servicio 1</h5>
-                            <p class="card-text">Descripción del servicio 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Servicio 2</h5>
-                            <p class="card-text">Descripción del servicio 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Servicio 3</h5>
-                            <p class="card-text">Descripción del servicio 3.</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Servicio 1</h5>
+                <p class="card-text">Descripción del servicio 1.</p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Servicio 2</h5>
+                <p class="card-text">Descripción del servicio 2.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Servicio 3</h5>
+                <p class="card-text">Descripción del servicio 3.</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ========== CONTACTO SECTION ========== -->
@@ -113,45 +130,72 @@
     <!-- NO OLVIDES cambiar el token en la línea de action -->
     <!-- Ver .env-example para instrucciones -->
     <section id="contacto" class="contacto-section bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Contacto</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <!-- IMPORTANTE: Reemplaza TU_TOKEN_FORMSPREE con tu token real -->
-                    <!-- Obtén tu token en https://formspree.io -->
-<!-- En GitHub (seguro) -->
-<form action="https://formspree.io/f/TU_TOKEN_FORMSPREE" method="POST">                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Tu email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                    </form>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="text-center mb-5">Contacto</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <!-- IMPORTANTE: Reemplaza TU_TOKEN_FORMSPREE con tu token real -->
+            <!-- Obtén tu token en https://formspree.io -->
+            <!-- En GitHub (seguro) -->
+            <form
+              action="https://formspree.io/f/TU_TOKEN_FORMSPREE"
+              method="POST"
+            >
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Tu email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea
+                  class="form-control"
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  placeholder="Tu mensaje"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Enviar
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
     <!-- Pie de página con información y copyright -->
     <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p>&copy; 2026 Mi Sitio. Todos los derechos reservados.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2026 Mi Sitio. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
     <!-- ========== SCRIPTS ========== -->
     <!-- Bootstrap JS: Funcionalidades interactivas -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Scripts personalizados: Smooth scroll, navbar activa, etc. -->
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
