@@ -52,3 +52,16 @@ Se ha creado el proyecto web "Ayuda a un peludo" cumpliendo con los requisitos e
 - Los estilos cumplen con todos los requerimientos especificados (a-f).
 
 Para visualizar la página, abrir `index.html` en un navegador web.
+
+## Sincronización con el repositorio
+
+El proyecto ha sido subido al repositorio de Git siguiendo los siguientes pasos:
+
+1. **Agregar archivos al staging**: `git add "Creación y uso de las hojas de estilo/"`
+2. **Commit de los cambios**: `git commit -m "Add project: HTML and CSS implementation for activity 1.3"`
+   - Se agregaron 3 archivos nuevos: `index.html`, `readme.md`, `style.css`
+   - Total: 156 líneas insertadas
+3. **Push al repositorio remoto**: `git push origin main`
+   - Los cambios se subieron exitosamente a la rama `main` del repositorio `Felipeig91/ULAGOS--web-programming` en GitHub
+
+El proyecto está ahora disponible en el repositorio remoto para revisión y colaboración.
