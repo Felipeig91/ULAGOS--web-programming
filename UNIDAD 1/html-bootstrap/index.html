@@ -1,0 +1,210 @@
+<!-- Documento HTML principal del proyecto de evaluación -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos de la página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluación N°1 - HTML, CSS y Bootstrap</title>
+
+    <!-- Enlace local al CSS de Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Enlace a los estilos personalizados del proyecto -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Cabecera principal con título y descripción -->
+    <header class="bg-primary text-white py-4">
+      <div class="container">
+        <h1 class="display-5">Evaluación N°1</h1>
+        <p class="lead">HTML, CSS y Bootstrap - Trabajo en equipo</p>
+      </div>
+    </header>
+
+    <!-- Navegación principal utilizando componentes de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="#">Proyecto Básico</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Elementos del menú colapsable para pantallas pequeñas -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#introduccion">Introducción</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contenido">Contenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    <main class="container my-5">
+      <!-- Sección de introducción con texto descriptivo y visual -->
+      <section id="introduccion" class="mb-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Bienvenidos</h2>
+            <p>
+              Este proyecto demuestra el uso de etiquetas HTML, hojas de estilo
+              CSS y componentes de Bootstrap en una página web simple y moderna.
+            </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">HTML semántico</li>
+              <li class="list-group-item">CSS personalizado</li>
+              <li class="list-group-item">Bootstrap 5</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <!-- Tarjeta de imagen y texto para reforzar el concepto de trabajo en equipo -->
+            <div class="card shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80"
+                class="card-img-top"
+                alt="Equipo de trabajo"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Trabajo en equipo</h5>
+                <p class="card-text">
+                  Diseña una página web que combine estilos CSS propios y clases
+                  de Bootstrap para una interfaz responsiva.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de contenido del proyecto con tarjetas descriptivas -->
+      <section id="contenido" class="mb-5">
+        <h2>Contenido del proyecto</h2>
+        <div class="row gy-4">
+          <article class="col-md-4">
+            <div class="card h-100 border-primary">
+              <div class="card-body">
+                <h3 class="card-title">HTML</h3>
+                <p class="card-text">
+                  Uso de etiquetas como &lt;header&gt;, &lt;nav&gt;,
+                  &lt;main&gt;, &lt;section&gt;, &lt;article&gt; y listas.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="col-md-4">
+            <div class="card h-100 border-success">
+              <div class="card-body">
+                <h3 class="card-title">CSS</h3>
+                <p class="card-text">
+                  Estilos personalizados para colores, tipografías, espaciado y
+                  efectos visuales.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="col-md-4">
+            <div class="card h-100 border-warning">
+              <div class="card-body">
+                <h3 class="card-title">Bootstrap</h3>
+                <p class="card-text">
+                  Componentes responsivos como navbar, grid, cards y
+                  formularios.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección con ejemplos de listas HTML ordenadas y desordenadas -->
+      <section class="mb-5">
+        <h2>Ejemplos de etiquetas HTML</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Lista ordenada</h3>
+            <ol>
+              <li>Planificación</li>
+              <li>Diseño</li>
+              <li>Implementación</li>
+            </ol>
+          </div>
+          <div class="col-md-6">
+            <h3>Lista desordenada</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Bootstrap</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de formulario de contacto con validación de Bootstrap -->
+      <section id="contacto" class="mb-5">
+        <h2>Formulario de contacto</h2>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="correo" class="form-label">Correo</label>
+            <input
+              type="email"
+              class="form-control"
+              id="correo"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea
+              class="form-control"
+              id="mensaje"
+              rows="3"
+              placeholder="Escribe tu mensaje..."
+              required
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Pie de página con información de la evaluación -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container text-center">
+        <p class="mb-1">Proyecto de evaluación con HTML, CSS y Bootstrap</p>
+        <small>Fecha: 16 de abril | Ponderación: 30%</small>
+      </div>
+    </footer>
+
+    <!-- Script local de Bootstrap para componentes interactivos -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
