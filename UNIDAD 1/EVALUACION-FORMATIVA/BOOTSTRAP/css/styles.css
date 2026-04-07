@@ -1,0 +1,19 @@
+ /* Estilos personalizados opcionales */
+      .hero-section {
+        padding: 60px 0;
+        background-color: #f8f9fa;
+      }
+
+    /* Definimos una altura fija para las imágenes del carrusel */
+      .carousel-item img {
+        height: 500px; /* Puedes ajustar esta altura según prefieras */
+        object-fit: cover; /* Esto evita que la imagen se deforme */
+        object-position: center; /* Centra la imagen en el recorte */
+      }
+
+      /* Ajuste para móviles: bajamos la altura en pantallas pequeñas */
+      @media (max-width: 768px) {
+        .carousel-item img {
+          height: 300px;
+        }
+      }
