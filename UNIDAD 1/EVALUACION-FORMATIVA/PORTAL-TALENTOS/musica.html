@@ -1,73 +1,315 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- META: Define metadatos del documento -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- TITLE: Nombre que aparece en la pestaña del navegador -->
     <title>Categoría Música - Portal de Talentos</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        color: #2c3e50;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 70px;
+      }
+
+      /* NAVBAR */
+      .navbar-musica {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .navbar-musica .navbar-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: white !important;
+      }
+
+      .navbar-musica .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 0 0.5rem;
+      }
+
+      .navbar-musica .nav-link:hover {
+        color: white !important;
+        transform: translateY(-2px);
+      }
+
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      /* HEADER */
+      header {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+        padding: 3rem 1rem;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+      }
+
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      /* MAIN */
+      main {
+        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      /* SECTIONS */
+      section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      section:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.8rem;
+        color: #ff6b6b;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+
+      /* LIST STYLES */
+      section ul {
+        list-style: none;
+      }
+
+      section li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 107, 107, 0.1) 0%,
+          rgba(255, 135, 135, 0.1) 100%
+        );
+        border-left: 4px solid #ff6b6b;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+
+      section li:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 107, 107, 0.15) 0%,
+          rgba(255, 135, 135, 0.15) 100%
+        );
+        transform: translateX(4px);
+      }
+
+      section a {
+        color: #ff6b6b;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      section a:hover {
+        color: #ff5252;
+        text-decoration: underline;
+      }
+
+      /* NAVIGATION */
+      nav {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+      }
+
+      nav a:hover {
+        background: linear-gradient(135deg, #ff5252 0%, #ff6b6b 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.35);
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        margin-top: auto;
+      }
+
+      footer p {
+        color: #bdc3c7;
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        section {
+          padding: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        main {
+          padding: 1rem;
+        }
+
+        section li {
+          padding: 0.75rem;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- HEADER: Encabezado de la página de categoría -->
+    <!-- NAVBAR: Barra de navegación -->
+    <nav class="navbar navbar-musica navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">🎓 Portal Talentos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#bienvenido">Bienvenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#equipo">Integrantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#proyecto">Nuestros Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#categorias">Explorar Categorías</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
     <header>
-      <!-- H1: Título principal que identifica la categoría -->
-      <h1>Categoría: Música</h1>
+    <header>
+      <h1>🎵 Categoría: Música</h1>
     </header>
 
-    <!-- MAIN: Contenido principal de la página -->
+    <!-- MAIN -->
     <main>
-      <!-- SECTION: Descripción de la categoría -->
+      <!-- Sección de descripción -->
       <section>
-        <!-- H2: Subtítulo descriptivo -->
         <h2>Talentos Musicales</h2>
-        <!-- P: Descripción de la categoría -->
         <p>
           Aquí encontrarás a los estudiantes con destacados talentos en el área
-          de la música, incluyendo músicos de la banda Meteora de Hungría y un
-          productor original que ayudan al plan del proyecto. Incluye cantantes,
-          instrumentistas, compositores y productores.
+          de la música. Nuestros artistas incluyen cantantes, instrumentistas,
+          compositores y productores musicales que brillan en diferentes estilos
+          y disciplinas.
         </p>
       </section>
 
-      <!-- SECTION: Lista de talentos en esta categoría -->
+      <!-- Sección de lista de talentos -->
       <section>
-        <!-- H2: Subtítulo para la lista -->
-        <h2>Estudiantes con Talento en Música</h2>
-
-        <!-- UL: Lista sin orden de talentos musicales -->
+        <h2>Estudiantes Destacados</h2>
         <ul>
-          <!-- LI: Cada talento es un elemento de lista -->
           <li>
-            <!-- A: Enlace a la ficha individual del estudiante -->
             <a href="ficha-musica-1.html"
-              >István Kovács - Vocalista de la Banda Meteora (Hungría)</a
+              >🎤 Sofia Rodríguez - Cantante de Ópera</a
             >
           </li>
           <li>
-            <!-- A: Enlace a la ficha individual del estudiante -->
-            <a href="ficha-musica-2.html"
-              >László Nagy - Guitarrista de la Banda Meteora (Hungría)</a
-            >
+            <a href="ficha-musica-2.html">🎸 Diego Flores - Guitarrista</a>
           </li>
           <li>
-            <!-- A: Enlace a la ficha individual del estudiante -->
-            <a href="ficha-musica-3.html">Zoltán Farkas - Productor Original</a>
+            <a href="ficha-musica-3.html"
+              >🎹 Valentina Sánchez - Productora Musical</a
+            >
           </li>
         </ul>
       </section>
     </main>
 
-    <!-- NAV: Navegación para volver al inicio -->
+    <!-- NAVIGATION -->
     <nav>
-      <!-- A: Enlace para regresar a la página principal -->
-      <a href="index.html">← Volver al inicio</a>
+      <a href="index.html">← Volver al Inicio</a>
     </nav>
 
-    <!-- FOOTER: Pie de página -->
+    <!-- FOOTER -->
     <footer>
-      <!-- P: Información del pie de página -->
-      <p>&copy; 2026 Portal de Talentos Escolares.</p>
+      <p>© 2026 Portal de Talentos Escolares • Música</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

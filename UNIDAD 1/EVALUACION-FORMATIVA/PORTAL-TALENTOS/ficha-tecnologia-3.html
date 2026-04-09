@@ -1,68 +1,356 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- META: Define metadatos del documento -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- TITLE: Nombre que aparece en la pestaña del navegador -->
     <title>Andrés Castro - Portal de Talentos</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #d4f1d4 0%, #a8e6a8 100%);
+        color: #2c3e50;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 70px;
+      }
+
+      /* NAVBAR */
+      .navbar-tech {
+        background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+        box-shadow: 0 4px 15px rgba(38, 166, 91, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .navbar-tech .navbar-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: white !important;
+      }
+
+      .navbar-tech .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 0 0.5rem;
+      }
+
+      .navbar-tech .nav-link:hover {
+        color: white !important;
+        transform: translateY(-2px);
+      }
+
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      /* HEADER */
+      header {
+        background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+        padding: 2rem 1rem;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 15px rgba(38, 166, 91, 0.3);
+      }
+
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin: 0;
+      }
+
+      header p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 0.5rem;
+      }
+
+      /* MAIN */
+      main {
+        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      /* CARD CONTAINER */
+      .profile-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .profile-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(38, 166, 91, 0.2);
+      }
+
+      .profile-info h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2rem;
+        color: #26a65b;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .profile-info p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.75rem;
+        line-height: 1.8;
+      }
+
+      .info-item {
+        padding: 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(38, 166, 91, 0.1) 0%,
+          rgba(46, 204, 113, 0.1) 100%
+        );
+        border-left: 4px solid #26a65b;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+      }
+
+      .info-item strong {
+        color: #26a65b;
+        font-weight: 700;
+      }
+
+      /* SECTION */
+      section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        color: #26a65b;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      /* ACHIEVEMENTS LIST */
+      .achievements-list {
+        list-style: none;
+      }
+
+      .achievements-list li {
+        padding: 0.75rem 0;
+        padding-left: 2rem;
+        position: relative;
+        font-size: 0.95rem;
+        color: #3a4a5c;
+        margin-bottom: 0.75rem;
+      }
+
+      .achievements-list li:before {
+        content: "★";
+        position: absolute;
+        left: 0;
+        color: #26a65b;
+        font-size: 1.2rem;
+      }
+
+      /* NAVIGATION */
+      nav {
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      nav a {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(38, 166, 91, 0.2);
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      nav a:hover {
+        background: linear-gradient(135deg, #1e8449 0%, #26a65b 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(38, 166, 91, 0.35);
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        margin-top: auto;
+      }
+
+      footer p {
+        color: #bdc3c7;
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .profile-card {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .profile-info h2 {
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        section {
+          padding: 1.5rem;
+        }
+
+        main {
+          padding: 1rem;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- HEADER: Encabezado de la ficha individual -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-tech navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">🎓 Portal Talentos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#bienvenido">Bienvenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#equipo">Integrantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#proyecto"
+                >Nuestros Proyectos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#categorias"
+                >Explorar Categorías</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
     <header>
-      <!-- H1: Nombre del estudiante como título principal -->
-      <h1>Andrés Castro</h1>
+      <h1>🔒 Andrés Castro</h1>
+      <p>Especialista en Ciberseguridad</p>
     </header>
 
-    <!-- MAIN: Contenido principal de la ficha -->
+    <!-- MAIN -->
     <main>
-      <!-- SECTION: Información básica del estudiante -->
-      <section>
-        <!-- H2: Subtítulo de información -->
-        <h2>Información Personal</h2>
-
-        <!-- DIV: Contenedor para los datos personales -->
-        <div>
-          <!-- P: Edad del estudiante -->
-          <p><strong>Edad:</strong> 17 años</p>
-
-          <!-- P: Talento del estudiante -->
-          <p><strong>Talento:</strong> Especialista en Ciberseguridad</p>
-
-          <!-- P: Descripción del talento -->
-          <p>
-            <strong>Descripción:</strong> Andrés es un especialista en
-            ciberseguridad con conocimientos avanzados en protección de datos y
-            prevención de ataques. Ha realizado auditorías de seguridad
-            informática en varias instituciones. Su dedicación al aprendizaje
-            continuo en el área de seguridad lo posiciona como experto a
-            temprana edad.
-          </p>
+      <!-- PROFILE CARD -->
+      <div class="profile-card">
+        <div class="profile-image">
+          <img
+            src="https://www.telefonica.com/es/wp-content/uploads/sites/4/2021/07/Telefonica2By2Bla2Bciberseguridad.jpg"
+            alt="Foto de Andrés Castro"
+          />
         </div>
-      </section>
 
-      <!-- SECTION: Imagen representativa -->
+        <div class="profile-info">
+          <h2>Información Personal</h2>
+          <div class="info-item">
+            <p><strong>Edad:</strong> 17 años</p>
+          </div>
+          <div class="info-item">
+            <p><strong>Especialidad:</strong> Ciberseguridad e Informática</p>
+          </div>
+          <div class="info-item">
+            <p>
+              <strong>Descripción:</strong> Andrés es un especialista en
+              ciberseguridad con conocimientos avanzados en protección de datos
+              y prevención de ataques. Ha realizado auditorías de seguridad en
+              varias instituciones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS SECTION -->
       <section>
-        <!-- H2: Subtítulo para la imagen -->
-        <h2>Foto del Artista</h2>
-
-        <!-- IMG: Fotografía o imagen representativa del estudiante -->
-        <img
-          src="https://www.telefonica.com/es/wp-content/uploads/sites/4/2021/07/Telefonica2By2Bla2Bciberseguridad.jpg"
-          alt="Foto de Andrés Castro especialista en ciberseguridad"
-          width="300"
-        />
-      </section>
-
-      <!-- SECTION: Logros -->
-      <section>
-        <!-- H2: Subtítulo para logros -->
-        <h2>Logros y Reconocimientos</h2>
-
-        <!-- UL: Lista de logros -->
-        <ul>
-          <!-- LI: Cada logro es un elemento de lista -->
+        <h3>Logros y Reconocimientos</h3>
+        <ul class="achievements-list">
           <li>
             Certificación Internacional en Ciberseguridad (CompTIA Security+)
           </li>
@@ -73,18 +361,18 @@
       </section>
     </main>
 
-    <!-- NAV: Navegación para volver -->
+    <!-- NAVIGATION -->
     <nav>
-      <!-- A: Enlace para regresar a la categoría de tecnología -->
-      <a href="tecnologia.html">← Volver a Tecnología</a> |
-      <!-- A: Enlace para regresar al inicio -->
-      <a href="index.html">Volver al Inicio</a>
+      <a href="tecnologia.html">← Volver a Tecnología</a>
+      <a href="index.html">Inicio</a>
     </nav>
 
-    <!-- FOOTER: Pie de página -->
+    <!-- FOOTER -->
     <footer>
-      <!-- P: Información del pie de página -->
-      <p>&copy; 2026 Portal de Talentos Escolares.</p>
+      <p>© 2026 Portal de Talentos Escolares • Ficha de Andrés Castro</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,75 +1,452 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- META: Define metadatos del documento -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- TITLE: Nombre que aparece en la pestaña del navegador -->
     <title>Portal de Talentos Escolares</title>
-  </head>
-  <body>
-    <!-- HEADER: Encabezado principal del sitio -->
-    <header>
-      <!-- H1: Título principal del portal (solo debe haber uno por página) -->
-      <h1>Portal de Talentos Escolares</h1>
-    </header>
 
-    <!-- MAIN: Contenido principal de la página -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #2c3e50;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 70px;
+      }
+
+      /* NAVBAR */
+      .navbar-custom {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      .navbar-custom .navbar-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: white !important;
+      }
+
+      .navbar-custom .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 0 0.5rem;
+      }
+
+      .navbar-custom .nav-link:hover {
+        color: white !important;
+        transform: translateY(-2px);
+      }
+
+      .navbar-custom .nav-link.active {
+        color: white !important;
+        border-bottom: 3px solid white;
+        padding-bottom: 0.3rem;
+      }
+
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      /* HEADER */
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 3rem 1rem;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      header h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      /* MAIN */
+      main {
+        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      /* SECTIONS */
+      section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        scroll-margin-top: 80px;
+      }
+
+      section:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.8rem;
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+
+      /* TEAM SECTION */
+      section ul {
+        list-style: none;
+      }
+
+      section li {
+        padding: 0.75rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 0.95rem;
+        color: #3a4a5c;
+      }
+
+      section li:before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        color: #667eea;
+        font-weight: bold;
+      }
+
+      /* TEAM CARDS */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .team-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        padding: 2rem;
+        color: white;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+        border: none;
+      }
+
+      .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+      }
+
+      .team-card h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .team-card p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      /* TEAM CARDS */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .team-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        padding: 2rem;
+        color: white;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+        border: none;
+      }
+
+      .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+      }
+
+      .team-card h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .team-card p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      /* IMAGE */
+      section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 1rem;
+        display: block;
+      }
+
+      /* NAVIGATION */
+      nav ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        list-style: none;
+        margin-top: 1.5rem;
+      }
+
+      nav a {
+        display: block;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        font-size: 1.05rem;
+        letter-spacing: 0.3px;
+      }
+
+      nav a:hover {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+      }
+
+      /* FOOTER */
+      footer {
+        background: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        margin-top: auto;
+      }
+
+      footer p {
+        color: #bdc3c7;
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        section {
+          padding: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        main {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR: Barra de navegación -->
+    <nav class="navbar navbar-custom navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">🎓 Portal Talentos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#bienvenido">Bienvenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#equipo">Integrantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyecto">Nuestros Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#categorias">Explorar Categorías</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="..." class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- MAIN: Contenido principal -->
     <main>
-      <!-- SECTION: Sección de descripción del portal -->
-      <section>
-        <!-- H2: Subtítulo o descripción general -->
+      <!-- Sección de bienvenida -->
+      <section id="bienvenido">
         <h2>Bienvenido</h2>
-        <!-- P: Párrafo con descripción del portal -->
         <p>
-          Este portal es un espacio dedicado a mostrar y reconocer los
-          diferentes talentos de nuestros estudiantes. Aquí encontrarás talentos
-          relacionados con música, tecnología y más. Ven a explorar y descubre
-          el talento que hay en nuestra institución.
+          Descubre los talentos excepcionales de nuestros estudiantes. Este
+          portal es un espacio dedicado a reconocer y celebrar el potencial de
+          nuestra comunidad educativa en diferentes áreas como música,
+          tecnología y más.
         </p>
       </section>
 
-      <!-- SECTION: Sección de integrantes del equipo -->
-      <section>
-        <!-- H2: Subtítulo para la lista de integrantes -->
+      <!-- Sección del equipo -->
+      <section id="equipo">
         <h2>Integrantes del Equipo</h2>
-        <!-- UL: Lista sin orden (bullets) de los integrantes -->
-        <ul>
-          <!-- LI: Cada elemento de la lista -->
-          <li>Juan Pérez - Coordinador</li>
-          <li>María González - Diseño</li>
-          <li>Carlos López - Contenido</li>
-          <li>Ana Martínez - Coordinadora de Categorías</li>
-        </ul>
+        <div class="team-grid">
+          <div class="team-card">
+            <h5>Juan Pérez</h5>
+            <p>Coordinador</p>
+          </div>
+          <div class="team-card">
+            <h5>María González</h5>
+            <p>Diseño</p>
+          </div>
+          <div class="team-card">
+            <h5>Carlos López</h5>
+            <p>Contenido</p>
+          </div>
+          <div class="team-card">
+            <h5>Ana Martínez</h5>
+            <p>Coordinadora de Categorías</p>
+          </div>
+        </div>
       </section>
 
-      <!-- SECTION: Sección de imagen representativa -->
-      <section>
-        <!-- H2: Subtítulo para la imagen -->
-        <h2>Imagen Representativa</h2>
-        <!-- IMG: Imagen que representa el portal -->
+      <!-- Sección de imagen -->
+      <section id="proyecto">
+        <h2>Nuestros Proyectos</h2>
         <img
           src="https://blogger.googleusercontent.com/img/a/AVvXsEiOWKOaMusYo1tygDc3xE7zV_-sgUarGgPFYbgMDaCra4f_ewwlAJmJ5qprFtEQ6z-LUmLrlt_ay5fO9jhXCBVLtqjwYE4DoOjE7LLWKZXl9bG_mhduh6PQ2KCtfYtUxYw5maThyWY30Uz0rqMZHDMD8ptsFVooTT9gMbOb2JtPHw7EoLn_FgJd60qsT1I=w640-h521"
           alt="Imagen representativa de talentos escolares"
-          width="400"
         />
       </section>
 
-      <!-- SECTION: Sección de categorías -->
-      <section>
-        <!-- H2: Subtítulo para las categorías -->
-        <h2>Categorías de Talentos</h2>
-        <!-- P: Descripción antes de los enlaces -->
-        <p>Selecciona una categoría para ver los talentos disponibles:</p>
-
-        <!-- NAV: Contenedor de navegación con enlaces de categorías -->
+      <!-- Sección de categorías -->
+      <section id="categorias">
+        <h2>Explorar Categorías</h2>
+        <p>Elige una categoría para descubrir los talentos disponibles:</p>
         <nav>
-          <!-- UL: Lista de enlaces a categorías -->
           <ul>
-            <!-- LI y A: Enlaces a cada categoría -->
-            <li><a href="musica.html">Música</a></li>
-            <li><a href="tecnologia.html">Tecnología</a></li>
+            <li><a href="musica.html">🎵 Música</a></li>
+            <li><a href="tecnologia.html">💻 Tecnología</a></li>
           </ul>
         </nav>
       </section>
@@ -77,12 +454,29 @@
 
     <!-- FOOTER: Pie de página -->
     <footer>
-      <!-- P: Información del pie de página -->
       <p>
-        &copy; 2026 Portal de Talentos Escolares. Todos los derechos reservados,
-        desarrollado por el equipo de estudiantes. Diseñado para mostrar el
-        talento de nuestra comunidad educativa.
+        © 2026 Portal de Talentos Escolares. Desarrollado por estudiantes •
+        Celebramos el talento
       </p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
