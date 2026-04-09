@@ -19,19 +19,24 @@
 /* Define la apariencia base de toda la página */
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.16), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(118, 75, 162, 0.14), transparent 38%),
+    linear-gradient(135deg, #eef2f8 0%, #cfd8e8 100%);
   color: #2c3e50;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 70px; /* Espacio para el navbar sticky */
 }
 
 /* ===== NAVBAR - BARRA DE NAVEGACIÓN ===== */
 .navbar-custom {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(120deg, rgba(102, 126, 234, 0.96) 0%, rgba(118, 75, 162, 0.96) 100%);
+  box-shadow: 0 6px 20px rgba(74, 91, 180, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
   position: sticky;
   top: 0;
   z-index: 999; /* Se mantiene encima de otros elementos */
@@ -57,6 +62,7 @@ body {
 .navbar-custom .nav-link:hover {
   color: white !important;
   transform: translateY(-2px);
+  text-shadow: 0 4px 16px rgba(255, 255, 255, 0.35);
 }
 
 /* Indicador del enlace activo */
@@ -79,10 +85,11 @@ body {
 /* ===== CAROUSEL - CARRUSEL DE IMÁGENES ===== */
 .carousel {
   width: 100%;
-  margin: 2rem 0;
-  border-radius: 12px;
+  margin: 0 0 2.25rem;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(24, 38, 70, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 /* Imágenes del carousel */
@@ -96,6 +103,22 @@ body {
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
+}
+
+/* Fondo difuminado para captions del carousel con texto negro */
+.carousel-caption-soft {
+  background: rgba(245, 248, 255, 0.76);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.carousel-caption-soft h5,
+.carousel-caption-soft p {
+  color: #111 !important;
+  text-shadow: none;
 }
 
 /* ===== HEADER - ENCABEZADO PRINCIPAL ===== */
@@ -127,28 +150,30 @@ main {
 
 /* ===== SECTIONS - SECCIONES DE CONTENIDO ===== */
 section {
-  background: white;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 28px rgba(24, 38, 70, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-margin-top: 80px; /* Espacio al hacer scroll suave */
 }
 
 /* Efecto hover en secciones */
 section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(24, 38, 70, 0.16);
 }
 
 /* ===== TÍTULOS DE SECCIONES (h2) ===== */
 h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.8rem;
-  color: #667eea;
+  color: #4f67d5;
   margin-bottom: 1rem;
   font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 /* ===== PÁRRAFOS ===== */
@@ -193,20 +218,28 @@ section li:before {
 
 /* ===== TARJETAS DE EQUIPO ===== */
 .team-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #5f78e8 0%, #6b84f0 52%, #7b61be 100%);
+  border-radius: 14px;
   padding: 2rem;
   color: white;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 10px 24px rgba(83, 96, 187, 0.28);
   border: none;
+}
+
+.team-card:nth-child(2n) {
+  background: linear-gradient(135deg, #5a87e8 0%, #4f9ed9 50%, #5b89cf 100%);
+}
+
+.team-card:nth-child(3n) {
+  background: linear-gradient(135deg, #6a73df 0%, #7966cc 50%, #865bb3 100%);
 }
 
 /* Elevación en hover */
 .team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 36px rgba(83, 96, 187, 0.36);
 }
 
 /* Nombre del integrante del equipo */
@@ -234,7 +267,7 @@ section img {
 }
 
 /* ===== NAVEGACIÓN - ENLACES A CATEGORÍAS ===== */
-nav ul {
+#categorias nav ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
@@ -243,36 +276,37 @@ nav ul {
 }
 
 /* Botones con enlace a categorías */
-nav a {
+#categorias nav a {
   display: block;
   padding: 1.25rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #5f78e8 0%, #6f68cf 100%);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 18px rgba(78, 97, 189, 0.25);
   font-size: 1.05rem;
   letter-spacing: 0.3px;
 }
 
 /* Efecto hover en botones de navegación */
-nav a:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+#categorias nav a:hover {
+  background: linear-gradient(135deg, #6f68cf 0%, #5f78e8 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(78, 97, 189, 0.34);
 }
 
 /* ===== FOOTER - PIE DE PÁGINA ===== */
 footer {
-  background: #2c3e50;
+  background: linear-gradient(120deg, #243447 0%, #2f4155 100%);
   color: #ecf0f1;
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
   margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Párrafo del footer */
