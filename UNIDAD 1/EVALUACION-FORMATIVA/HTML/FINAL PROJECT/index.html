@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ULAGOS - HTML Final Project</title>
+    <style>
+      /* --- ESTILOS CSS --- */
+
+      /* Reset básico para eliminar márgenes del navegador */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f7f6;
+      }
+
+      /* Barra de navegación superior */
+      header {
+        background: #002e5b; /* Azul institucional de EdYoda  */
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        margin: auto;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #00d4ff;
+      }
+
+      /* Sección Hero (Bienvenida) */
+      .hero {
+        background:
+          linear-gradient(rgba(0, 46, 91, 0.7), rgba(0, 46, 91, 0.7)),
+          url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* Contenedor de contenido principal */
+      .main-container {
+        width: 85%;
+        margin: 40px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #002e5b;
+        margin-bottom: 20px;
+      }
+
+      /* Diseño de cuadrícula para texto e imagen */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .grid-layout img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* Botón de acción para GitHub */
+      .btn-github {
+        display: inline-block;
+        background: #28a745;
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      /* Pie de página */
+      footer {
+        background: #f8f9fa;
+        text-align: center;
+        padding: 30px 0;
+        border-top: 1px solid #eee;
+      }
+
+      /* Ajustes para dispositivos móviles */
+      @media (max-width: 768px) {
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">ULAGOS</div>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>¡Hola a todos!</h1>
+      <p>Proyecto Final para el Módulo de HTML</p>
+    </section>
+
+    <main class="main-container">
+      <div class="grid-layout">
+        <div class="info">
+          <h2>Instrucciones del Proyecto</h2>
+          <p>
+            ¡Da lo mejor de ti! Una vez que hayas completado el
+            desarrollo, puedes agregar este proyecto a tu repositorio de
+            GitHub.
+          </p>
+          <p style="margin-top: 15px">
+            Debes crear un nuevo repositorio en GitHub y subir (push) los
+            archivos locales de tu proyecto. En la sección de recursos
+            encontrarás un PDF que te ayudará con este proceso.
+          </p>
+          <a href="https://github.com" class="btn-github" target="_blank"
+            >Ir a mi Repositorio</a
+          >
+        </div>
+        <div class="visual">
+          <img
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
+            alt="Colaboración tecnológica"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>¡No puedo esperar a ver lo que diseñan!</p>
+      <p><strong>¡Todo lo mejor!</strong></p>
+      <hr style="width: 50px; margin: 15px auto; border: 1px solid #002e5b" />
+      <p>ULAGOS Digital University</p>
+      <p>
+        <a href="https://www.felipepinuer.com" target="_blank"
+          >www.felipepinuer.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

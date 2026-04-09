@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursos - Ulagos Project</title>
+    <style>
+      /* --- ESTILOS GENERALES --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: #f4f7f6;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navegación (Igual a la página principal) */
+      header {
+        background: #002e5b;
+        color: #fff;
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Contenedor de Recursos */
+      .resources-container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .resource-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      h1,
+      h2 {
+        color: #002e5b;
+        margin-bottom: 20px;
+      }
+
+      .step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .step-number {
+        background: #00d4ff;
+        color: #002e5b;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      code {
+        background: #272822;
+        color: #f8f8f2;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 40px;
+        font-style: italic;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">ULAGOS <span>RECURSOS</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Volver al Proyecto</a></li>
+      </ul>
+    </header>
+
+    <main class="resources-container">
+      <h1>Guía de Recursos de GitHub</h1>
+      <p>
+        Tal como se indica en el módulo, aquí tienes los pasos para subir tu
+        proyecto local a un repositorio.
+      </p>
+      <br />
+
+      <section class="resource-card">
+        <h2>Pasos para subir tu código</h2>
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <div>
+            <strong>Crea un nuevo repositorio:</strong>
+            Ve a tu cuenta de GitHub y crea un repositorio público llamado
+            <code>html-final-project</code>.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div>
+            <strong>Inicializa tu carpeta:</strong>
+            Abre la terminal en tu carpeta local y escribe
+            <code>git init</code> para empezar el seguimiento.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div>
+            <strong>Prepara tus archivos:</strong>
+            Usa <code>git add .</code> para incluir todos tus archivos locales.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div>
+            <strong>Sube el proyecto (Push):</strong>
+            Vincula tu repositorio remoto y usa
+            <code>git push origin main</code> para completar la entrega.
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-note">
+        <p>¡Mucho éxito con tu entrega en ULAGOS Digital University!</p>
+      </div>
+    </main>
+  </body>
+</html>

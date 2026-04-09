@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos CSS | Curso</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="navbar" aria-label="Navegacion principal">
+        <a class="logo" href="index.html">CSS desde Cero</a>
+        <div class="nav-links">
+          <a href="index.html">Jerarquía y Tipografía</a>
+          <a class="active" href="fundamentos.html">Fundamentos CSS</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <article class="section-card">
+        <span class="chip">Guía rápida</span>
+        <h1>Cómo piensa el navegador cuando aplicas CSS</h1>
+        <p class="extracto">
+          Antes de crear diseños complejos, conviene dominar los conceptos que
+          hacen que todo encaje: selección, medida y espacio.
+        </p>
+      </article>
+
+      <nav class="mini-nav" aria-label="Navegacion por secciones">
+        <a href="#selectores">Selectores</a>
+        <a href="#unidades">Unidades</a>
+        <a href="#box-model">Box Model</a>
+        <a href="#lectura">Legibilidad</a>
+      </nav>
+
+      <section id="selectores" class="section-card">
+        <span class="chip">01</span>
+        <h2>Selectores básicos</h2>
+        <p>
+          Los selectores son la forma de decirle al navegador qué elemento
+          quieres estilizar.
+        </p>
+        <p>
+          <strong>Etiqueta:</strong> afecta a todos los elementos del mismo
+          tipo.
+        </p>
+        <p><strong>Clase:</strong> reutilizable para varios elementos.</p>
+        <p>
+          <strong>ID:</strong> identificador único para un elemento específico.
+        </p>
+      </section>
+
+      <section id="unidades" class="section-card">
+        <span class="chip">02</span>
+        <h2>Unidades de medida</h2>
+        <p>
+          <strong>px</strong> ofrece control fijo, pero no escala tan bien para
+          accesibilidad. <strong>rem</strong> se adapta al tamaño base del
+          usuario y permite interfaces más flexibles.
+        </p>
+        <p>
+          Regla práctica: usa <strong>rem</strong> para tipografía y espaciados
+          generales, y reserva <strong>px</strong> para detalles muy concretos.
+        </p>
+      </section>
+
+      <section id="box-model" class="section-card">
+        <span class="chip">03</span>
+        <h2>Box Model</h2>
+        <p>
+          Todo elemento es una caja compuesta por: <strong>content</strong>,
+          <strong>padding</strong>, <strong>border</strong> y
+          <strong>margin</strong>.
+        </p>
+        <p>
+          Si algo "no cabe" o se ve desalineado, normalmente la respuesta está
+          en cómo se suman estas cuatro capas.
+        </p>
+      </section>
+
+      <section id="lectura" class="section-card">
+        <span class="chip">04</span>
+        <h2>Jerarquía visual y lectura cómoda</h2>
+        <p>
+          No basta con colores bonitos: una buena jerarquía guía la mirada del
+          usuario con títulos claros, contraste y espacio en blanco.
+        </p>
+        <p>
+          Para textos de lectura continua, un <strong>line-height</strong> entre
+          <strong>1.5</strong> y <strong>1.7</strong> suele funcionar muy bien.
+        </p>
+        <a class="boton-leer" href="index.html">Volver al contenido anterior</a>
+      </section>
+    </main>
+  </body>
+</html>
