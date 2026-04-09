@@ -99,6 +99,15 @@ Cada estudiante talentoso tiene una ficha con:
 ✅ **Diseño responsivo** - Compatible con diferentes tamaños de pantalla  
 ✅ **Contenido creativo** - Información realista sobre estudiantes talentosos
 
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5** - Estructura semántica y contenido del sitio
+- **CSS3** - Estilos visuales personalizados y organización por archivos
+- **Bootstrap 5** - Componentes responsivos como navbar y carousel
+- **JavaScript (Vanilla JS)** - Interacciones del sitio, incluyendo carga aleatoria de imágenes
+- **Visual Studio Code** - Entorno de desarrollo utilizado para edición del proyecto
+- **copilot** - Plugin Chat AI
+
 ## 🚀 Cómo Usar
 
 ### Abrir el Sitio
