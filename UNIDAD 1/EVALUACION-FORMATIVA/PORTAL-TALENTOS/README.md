@@ -25,6 +25,13 @@ PORTAL-TALENTOS/
 ├── ficha-tecnologia-2.html      # Laura Mendez - Diseñadora Web
 ├── ficha-tecnologia-3.html      # Andrés Castro - Especialista Ciberseguridad
 │
+├── css/                          # Estilos centralizados del sitio
+│   ├── main.css                  # Estilos de index.html
+│   ├── musica.css                # Estilos de musica.html
+│   ├── tecnologia.css            # Estilos de tecnologia.html
+│   ├── fichas-musica.css         # Estilos de fichas musicales
+│   └── fichas-tecnologia.css     # Estilos de fichas tecnológicas
+│
 ├── img/                          # Carpeta de imágenes
 ├── README.md                     # Este archivo
 ```
@@ -73,6 +80,11 @@ Cada estudiante talentoso tiene una ficha con:
 ✅ **Estructura HTML5 correcta** - Utiliza DOCTYPE, head, body y etiquetas semánticas  
 ✅ **Navegación funcional** - Todos los archivos conectados mediante enlaces  
 ✅ **Comentarios explicativos** - Cada etiqueta incluye comentarios educativos  
+✅ **Diseño moderno con Bootstrap 5** - Componentes responsivos y consistentes  
+✅ **Navbar unificado en todas las páginas** - Menú común con accesos principales  
+✅ **Scroll suave en inicio** - Navegación interna fluida por secciones  
+✅ **Carousel con imágenes aleatorias de talento** - Imágenes dinámicas al recargar  
+✅ **CSS ordenado por archivos** - Estilos separados en carpeta `css`  
 ✅ **Etiquetas aprendidas en clase**:
 
 - Títulos: `<h1>`, `<h2>`
@@ -145,10 +157,20 @@ Cada estudiante talentoso tiene una ficha con:
 ## 📝 Notas de Desarrollo
 
 - Todos los archivos están en español para mayor claridad educativa
-- Los comentarios HTML explican la función de cada etiqueta
-- Las imágenes son placeholders y pueden ser reemplazadas
-- El sitio es completamente funcional sin necesidad de CSS o JavaScript
-- Se enfatiza la importancia de la estructura HTML correcta
+- Los comentarios CSS y HTML explican la función de cada bloque
+- Los estilos fueron externalizados para mejorar mantenimiento
+- El sitio usa Bootstrap + CSS personalizado + JavaScript para interacciones
+- El carousel del inicio carga imágenes aleatorias relacionadas con talento
+- Se mantiene la estructura HTML correcta y semántica como base del proyecto
+
+## 🔄 Cambios Recientes (Abril 2026)
+
+- Se creó la carpeta `css` y se movieron los estilos inline de todas las páginas.
+- Se agregaron archivos CSS separados por tipo de página para mantener orden.
+- Se unificó el navbar en todas las páginas del portal.
+- Se mejoró el `index.html` con un carousel de enfoque en talento.
+- Se implementó carga aleatoria de imágenes para el carousel.
+- Se mantuvieron y mejoraron comentarios de documentación en código.
 
 ## 🔍 Verificación de Calidad
 
@@ -204,5 +226,5 @@ Cada estudiante talentoso tiene una ficha con:
 
 ---
 
-**Última actualización**: 2 de abril de 2026  
-**Versión**: 1.0
+**Última actualización**: 9 de abril de 2026  
+**Versión**: 2.0

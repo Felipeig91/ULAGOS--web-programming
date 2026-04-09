@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal de Talentos Escolares</title>
+        <img id="carousel-img-1" src="https://images.unsplash.com/photo-1512307604387-db0aca00f313?w=800&h=500&fit=crop" class="d-block w-100" alt="Estudiante con talento musical tocando guitarra" />
 
     <!-- Bootstrap CSS -->
-    <link
+        <img id="carousel-img-2" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&h=500&fit=crop" class="d-block w-100" alt="Talento en programación y tecnología" />
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+        <img id="carousel-img-3" src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=800&h=500&fit=crop" class="d-block w-100" alt="Joven con talento artístico en acción" />
 
     <!-- Google Fonts -->
     <link
@@ -17,292 +17,8 @@
       rel="stylesheet"
     />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        color: #2c3e50;
-        line-height: 1.6;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        padding-top: 70px;
-      }
-
-      /* NAVBAR */
-      .navbar-custom {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        position: sticky;
-        top: 0;
-        z-index: 999;
-      }
-
-      .navbar-custom .navbar-brand {
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: white !important;
-      }
-
-      .navbar-custom .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        margin: 0 0.5rem;
-      }
-
-      .navbar-custom .nav-link:hover {
-        color: white !important;
-        transform: translateY(-2px);
-      }
-
-      .navbar-custom .nav-link.active {
-        color: white !important;
-        border-bottom: 3px solid white;
-        padding-bottom: 0.3rem;
-      }
-
-      .navbar-toggler {
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
-
-      /* HEADER */
-      header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 3rem 1rem;
-        text-align: center;
-        color: white;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-      }
-
-      header h1 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-      }
-
-      /* MAIN */
-      main {
-        flex: 1;
-        max-width: 1000px;
-        margin: 0 auto;
-        width: 100%;
-        padding: 2rem 1rem;
-      }
-
-      /* SECTIONS */
-      section {
-        background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        scroll-margin-top: 80px;
-      }
-
-      section:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-      }
-
-      h2 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 1.8rem;
-        color: #667eea;
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      p {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 1rem;
-        line-height: 1.8;
-      }
-
-      /* TEAM SECTION */
-      section ul {
-        list-style: none;
-      }
-
-      section li {
-        padding: 0.75rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-        font-size: 0.95rem;
-        color: #3a4a5c;
-      }
-
-      section li:before {
-        content: "✦";
-        position: absolute;
-        left: 0;
-        color: #667eea;
-        font-weight: bold;
-      }
-
-      /* TEAM CARDS */
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .team-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 12px;
-        padding: 2rem;
-        color: white;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
-        border: none;
-      }
-
-      .team-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
-      }
-
-      .team-card h5 {
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
-
-      .team-card p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-        margin: 0;
-      }
-
-      /* TEAM CARDS */
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .team-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 12px;
-        padding: 2rem;
-        color: white;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
-        border: none;
-      }
-
-      .team-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
-      }
-
-      .team-card h5 {
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
-
-      .team-card p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-        margin: 0;
-      }
-
-      /* IMAGE */
-      section img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-top: 1rem;
-        display: block;
-      }
-
-      /* NAVIGATION */
-      nav ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        list-style: none;
-        margin-top: 1.5rem;
-      }
-
-      nav a {
-        display: block;
-        padding: 1.25rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-        font-size: 1.05rem;
-        letter-spacing: 0.3px;
-      }
-
-      nav a:hover {
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
-      }
-
-      /* FOOTER */
-      footer {
-        background: #2c3e50;
-        color: #ecf0f1;
-        text-align: center;
-        padding: 2rem 1rem;
-        font-size: 0.9rem;
-        margin-top: auto;
-      }
-
-      footer p {
-        color: #bdc3c7;
-        margin: 0;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2rem;
-        }
-
-        section {
-          padding: 1.5rem;
-        }
-
-        h2 {
-          font-size: 1.5rem;
-        }
-
-        main {
-          padding: 1rem;
-        }
-      }
-    </style>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
@@ -365,13 +81,25 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="..." />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwq0ZxPH5jVUzCjkKgz52E4pVJ-bHV6pK2yg&s"
+            class="d-block w-100"
+            alt="Estudiante con talento musical tocando guitarra"
+          />
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..." />
+          <img
+            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&h=500&fit=crop"
+            class="d-block w-100"
+            alt="Talento en programación y tecnología"
+          />
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..." />
+          <img
+            src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=800&h=500&fit=crop"
+            class="d-block w-100"
+            alt="Joven con talento artístico en acción"
+          />
         </div>
       </div>
       <button
@@ -465,6 +193,27 @@
 
     <!-- Smooth Scroll -->
     <script>
+      // Carga imágenes aleatorias enfocadas en talento para el carousel en cada recarga.
+      const randomTalentQueries = [
+        "student,music,talent,stage",
+        "student,technology,coding,talent",
+        "young,artist,creative,talent",
+        "student,robotics,innovation",
+        "education,science,talent,school",
+        "student,piano,performance",
+      ];
+
+      const randomQueries = [...randomTalentQueries]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
+      randomQueries.forEach((query, index) => {
+        const imageElement = document.getElementById(`carousel-img-${index + 1}`);
+        if (imageElement) {
+          imageElement.src = `https://source.unsplash.com/1200x500/?${query}&sig=${Date.now() + index}`;
+        }
+      });
+
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
